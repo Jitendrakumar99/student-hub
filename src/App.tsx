@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainLayout } from "./components/layout/MainLayout";
 import { ParentLayout } from "./components/layout/ParentLayout";
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Subjects from "./pages/academics/Subjects";
@@ -52,6 +54,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Public Routes */}
+          <Route path="/welcome" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+
           {/* Student Portal */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Dashboard />} />
